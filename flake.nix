@@ -15,17 +15,7 @@
   in {
     packages.${system}.default = pkgs.posy-scalable;
     overlays.default = final: prev: {
-      posy-scalable = pkgs.callPackage ./package.nix {
-        inherit
-          (pkgs)
-          lib
-          stdenvNoCC
-          inkscape
-          xcursorgen
-          makeFontsConf
-          python3
-          ;
-      };
+      posy-scalable = pkgs.callPackage ./package.nix {};
     };
   };
 }
