@@ -30,12 +30,12 @@ stdenvNoCC.mkDerivation {
     runHook preBuild
     export HOME=$(mktemp -d)
     # build each variant
-    cd plasma_themes/src/build_tools
+    pushd plasma_themes/src/build_tools
     ./buildVariant.sh 0
     ./buildVariant.sh 1
     ./buildVariant.sh 2
     ./buildVariant.sh 3
-    cd ../../..
+    popd
     runHook postBuild
   '';
 
